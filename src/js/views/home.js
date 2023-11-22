@@ -1,15 +1,38 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext, useEffect, useState } from "react";
 import "../../styles/home.css";
+import { Context } from "../store/appContext";
+import imagenSW from "../../img/imagenSW.jpg";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	
+	const {store, actions} = useContext(Context)
+	useEffect(() => {
+		actions.loadSomeData();
+	  }, []);
+
+	const getPlanetfromApi = () => {
+		actions.getAPlanet()
+	}
+	
+
+	return (
+	<>
+
+	<h1>Characters</h1>
+    {store.characters.results && store.characters.results.map((character, index) => (
+        <div className="card" style={{width: "18rem"}}>
+		<img src={imagenSW} className="card-img-top" alt="..."/>
+		<div className="card-body">
+		<h5 className="card-title">{character.name}</h5>
+		  <p className="card-text">Genero: {character.gender}</p>
+		  <p className="card-text">Hair Color: {character.hair_color}</p>
+		  <p className="card-text">Eye Color: {character.eye_color}</p>
+		  <a href="#" className="btn btn-primary">Go somewhere</a>
+			</div>
+		  </div>
+	  
+    ))}
+	<button onClick={() => getPlanetfromApi()}>VVVVV</button>
+	</>
+)
+};
