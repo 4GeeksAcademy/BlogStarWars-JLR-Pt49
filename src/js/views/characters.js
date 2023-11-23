@@ -14,13 +14,13 @@ export const Characters = () => {
 		<>
 			{character ? (
 				<>
-			<div class="container">
-  			<div class="row ">
-    			<div class="col-md-6">
+			<div className="container">
+  			<div className="row ">
+    			<div className="col-md-6">
 					<img src={imgCharacters}/>
    			 	</div>
 
-    			<div class="col-md-6">
+    			<div className="col-md-6">
 					<h1 className="display-4">{character.name}</h1>
 					<p>Star Wars is an American epic space opera media franchise created by George Lucas, which began with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. The franchise has been expanded into various films and other media, including television series, video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe. Star Wars is one of the highest-grossing media franchises of all time.
 
@@ -32,35 +32,35 @@ export const Characters = () => {
   			</div>
 			</div>
 
-			<div class="container">
-  <div class="row ">
+			<div className="container border-top">
+		<div className="row mt-3" style={{color: "rgb(159, 14, 14)"}}>
 
-    <div class="col-lg-2 col-md-12">
+    <div className="col-lg-2 col-md-12">
 	<p>Name:</p>
 	<p>{character.name}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Birth year:</p>
 	<p>{character.birth_year}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Gender:</p>
 	<p>{character.gender}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Heigth</p>
 	<p>{character.height}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Skin Color:</p>
 	<p>{character.skin_color}</p>
     </div>
 
-	<div class="col-lg-2 col-md-6">
+	<div className="col-lg-2 col-md-6">
 	<p>Eye Color:</p>
 	<p>{character.eye_color}</p>
     </div>

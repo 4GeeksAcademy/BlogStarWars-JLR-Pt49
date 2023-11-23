@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import imgCharacters from "../../img/characters.webp"
+import SWmap from "../../img/mapa_planetas.png"
 
 export const Planets = () => {
 	const { store, actions } = useContext(Context);
@@ -14,13 +14,13 @@ export const Planets = () => {
 		<>
 		{planet ? (
 				<>
-			<div class="container">
-  			<div class="row ">
-    			<div class="col-md-6">
-					<img src={imgCharacters}/>
+			<div className="container">
+  			<div className="row ">
+    			<div className="col-md-6">
+					<img src={SWmap}/>
    			 	</div>
 
-    			<div class="col-md-6">
+    			<div className="col-md-6">
 					<h1 className="display-4">{planet.name}</h1>
 					<p>Star Wars is an American epic space opera media franchise created by George Lucas, which began with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. The franchise has been expanded into various films and other media, including television series, video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe. Star Wars is one of the highest-grossing media franchises of all time.
 
@@ -32,35 +32,35 @@ export const Planets = () => {
   			</div>
 			</div>
 
-			<div class="container">
-  <div class="row ">
+			<div className="container border-top">
+  		<div className="row mt-3" style={{color: "rgb(159, 14, 14)"}}>
 
-    <div class="col-lg-2 col-md-12">
+    <div className="col-lg-2 col-md-12">
 	<p>Name:</p>
 	<p>{planet.name}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Diameter:</p>
 	<p>{planet.diameter}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Climate:</p>
 	<p>{planet.climate}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Population:</p>
 	<p>{planet.population}</p>
     </div>
 
-    <div class="col-lg-2 col-md-6">
+    <div className="col-lg-2 col-md-6">
 	<p>Rotation period:</p>
 	<p>{planet.rotation_period} Hrs</p>
     </div>
 
-	<div class="col-lg-2 col-md-6">
+	<div className="col-lg-2 col-md-6">
 	<p>Orbital period:</p>
 	<p>{planet.orbital_period} Days</p>
     </div>
