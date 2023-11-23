@@ -1,7 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
-import imagenSW from "../../img/imagenSW.jpg";
+import imgCharacters from "../../img/characters.webp"
+import imgPlanets from "../../img/planet.jpg"
+import imgShip from "../../img/ships.jpg"
+import { Link } from "react-router-dom";
+
 
 export const Home = () => {
     const { store, actions } = useContext(Context);
@@ -27,15 +31,15 @@ export const Home = () => {
             const character = store.characters.results[index];
             return (
                 <div key={index} className="card" style={{ width: "18rem", margin: "0 10px", display: "inline-block" }}>
-                    <img src={imagenSW} className="card-img-top" alt="..." />
+                    <img src={imgCharacters} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{character.name}</h5>
                         <p className="card-text">Gender: {character.gender}</p>
                         <p className="card-text">Hair Color: {character.hair_color}</p>
                         <p className="card-text">Eye Color: {character.eye_color}</p>
-                        <a href="#" className="btn btn-primary">
+                        <Link to={"/characters/" + index} className="btn btn-primary">
                             Learn More!
-                        </a>
+                        </Link>
                     </div>
                 </div>
             );
@@ -50,15 +54,15 @@ export const Home = () => {
             const planet = store.planets.results[index];
             return (
                 <div key={index} className="card" style={{ width: "18rem", margin: "0 10px", display: "inline-block" }}>
-                    <img src={imagenSW} className="card-img-top" alt="..." />
+                    <img src={imgPlanets} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{planet.name}</h5>
                         <p className="card-text">Population: {planet.population}</p>
                         <p className="card-text">Rotation Period: {planet.rotation_period} Hrs</p>
                         <p className="card-text">Climate: {planet.climate}</p>
-                        <a href="#" className="btn btn-primary">
+                        <Link to={"/planets/" + index} className="btn btn-primary">
                             Learn More!
-                        </a>
+                        </Link>
                     </div>
                 </div>
             );
@@ -73,15 +77,15 @@ export const Home = () => {
             const starship = store.starships.results[index];
             return (
                 <div key={index} className="card" style={{ width: "18rem", margin: "0 10px", display: "inline-block" }}>
-                    <img src={imagenSW} className="card-img-top" alt="..." />
+                    <img src={imgShip} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{starship.name}</h5>
                         <p className="card-text">Passengers: {starship.passengers}</p>
-                        <p className="card-text">Crew: {starship.crew} Hrs</p>
+                        <p className="card-text">Crew: {starship.crew}</p>
                         <p className="card-text">Cargo Capacity: {starship.cargo_capacity}</p>
-                        <a href="#" className="btn btn-primary">
+                        <Link to={"/starships/" + index} className="btn btn-primary">
                             Learn More!
-                        </a>
+                        </Link>
                     </div>
                 </div>
             );
